@@ -1,0 +1,26 @@
+1. Dummy Q - learning algorithm
+
+why dummy?
+1.Exploit vs Exploration
+->solution1: decaying e- greedy
+for i in range(1000)
+    e = 0.1 /(i+1)
+    if random(1) < e:
+        #exploration
+        a = random
+    else:
+        #exploit
+        a = argmax(Q(s,a))
+
+->solution2: add random noise (decaying)
+a = argmax(Q(s,a) + random_values/(i+1))
+차선책이 선택될 수 있음
+
+->solution3: discounted reward
+미래에 받는 reward일 수록 discounted 해서 적용
+
+2. about Convergence : 수렴 한다!
+
+Q_hat converges to Q
+In deterministic world
+In finite states
