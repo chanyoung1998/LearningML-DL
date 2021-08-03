@@ -1,0 +1,23 @@
+1. Determinisitcic vs Stochastic(Non~)
+
+-.In deterministic models the output of the model is fully determined by the parameter values
+and the initial conditions initial conditions
+
+-.Stochastic models possess some inherent randomness
+The same set of parameter values and initial conditions will lead to an ensemble of different outputs
+
+is_slippery attribute - True로 하면 stochastic한 모델로 만들 수 있다
+gym.envs.registration.register(id='FrozenLake-v3',entry_point='gym.envs.toy_text:FrozenLakeEnv', kwargs={'map_name':'4x4', 'is_slippery':True})
+
+2. Why does not work in stochastic worlds?
+
+sol)
+-Listen to Q(s') just a little bit
+-Update Q(s) little bit(learning rate)
+
+=> Like our life mentors , don't just listen and follow one mentor and need to listen from many mentors
+
+sol)
+-Learning incrementally
+learning rate :α
+Q(s,a) <- (1-α) Q(s,a) + α [reward + γmaxQ(s',a')]

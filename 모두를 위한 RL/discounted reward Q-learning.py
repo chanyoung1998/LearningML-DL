@@ -3,7 +3,6 @@ import gym
 import random as pr
 import matplotlib.pyplot as plt
 
-# https://gist.github.com/stober/1943451
 
 # chooses randomly among eligible maximum indices
 def rargmax(vector):
