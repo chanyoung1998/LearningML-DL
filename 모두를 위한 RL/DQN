@@ -1,0 +1,20 @@
+tensorflow2.0
+https://dksshddl.tistory.com/entry/%EA%B0%95%ED%99%94%ED%95%99%EC%8A%B5-tensorflow-2%EB%A1%9C-DQN
+
+Two big issues
+(diverges using neural networks due to)
+1. Correlations between samples
+
+2. Non - Stationary targets
+활을 쏘자마자 과녁이 움직이는 것과 같은 문제 발생
+
+solution1)go deep
+:increase the number of layers
+
+solution2)experience replay
+sample을 바로 학습시키는 것이 아니라 sample을 buffer에 저장시켜 놨다가
+buffer에서 랜덤하게 sample을 가져와 학습을 시킨다.
+
+solution3) separate target network
+-perform gradient discent step on loss function(with respect to  the network parameter:Θ)
+-Every C step reset target network = prediction network
